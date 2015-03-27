@@ -105,6 +105,18 @@ public class ElevensBoard extends Board {
      *              include a jack, a queen, and a king; false otherwise.
      */
     private boolean containsJQK(List<Integer> selectedCards) {
-
+        int[] save = new int[selectedCards.size()];
+        for (int i = 0; i < selectedCards.size(); i++)
+        {
+            save[(cardAt(i).pointValue())-1]++;
+        }
+        if (save[10]>0 &&save[11]>0&&save[12]>0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
